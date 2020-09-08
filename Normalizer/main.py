@@ -1,4 +1,4 @@
-from Normalizer.Normalizer import Normalizer
+from Normalizer import Normalizer
 import numpy as np
 
 def main():

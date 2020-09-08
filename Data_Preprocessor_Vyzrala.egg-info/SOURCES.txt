@@ -1,0 +1,9 @@
+README.md
+setup.py
+Data_Preprocessor_Vyzrala.egg-info/PKG-INFO
+Data_Preprocessor_Vyzrala.egg-info/SOURCES.txt
+Data_Preprocessor_Vyzrala.egg-info/dependency_links.txt
+Data_Preprocessor_Vyzrala.egg-info/top_level.txt
+Normalizer/Normalizer.py
+Normalizer/__init__.py
+Normalizer/main.py
