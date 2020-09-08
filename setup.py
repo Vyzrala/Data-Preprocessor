@@ -2,7 +2,7 @@ import setuptools
 
 setuptools.setup(
     name="Data-Preprocessor-Vyzrala",
-    varsion="0.0.1",
+    varsion="0.0.2",
     author="Marcin Hebdzyński",
     author_email="hebdzynski.m@gmail.com",
     url="https://github.com/Vyzrala/Data-Preprocessor",
