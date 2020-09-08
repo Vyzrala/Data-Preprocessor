@@ -99,8 +99,8 @@ class Normalizer:
             rv = [p*self.euclidean_length for p in array]
             return np.array(rv)
 
-    def __init__(self):
-        self.FeatureScaler = self.FeatureScaler()
+    def __init__(self, scale=(0, 1)):
+        self.FeatureScaler = self.FeatureScaler(scale)
         # self.MinMaxScaler = self.FeatureScaler()
         self.MeanScaler = self.MeanScaler()
         self.ZScoreScaler = self.ZScoreScaler()
