@@ -33,6 +33,7 @@ class TestNormalizer(unittest.TestCase):
                 96.19000244, 106.26000214, 108.9375    , 109.66500092,
                 110.0625    , 113.90249634, 111.11250305, 112.72750092]
     # test_data = np.array([round(t, 2) for t in test_data])
+    test_data = np.array(test_data)
     test_data = np.reshape(test_data, (-1,1))
         
     def test_transform_featurescaler(self):

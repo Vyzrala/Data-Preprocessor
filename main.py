@@ -32,8 +32,7 @@ def main():
     test = np.reshape(test, (-1, 1))
     normalizer = Normalizer()
     normalized = normalizer.FeatureScaler.transform(test)
-    print(normalized.all())
-    
+    print(normalized)    
        
 
 
