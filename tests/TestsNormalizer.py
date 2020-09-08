@@ -3,7 +3,7 @@ sys.path.append('../')
 from Normalizer.Normalizer import Normalizer
 import unittest
 import numpy as np
-from sklearn.preprocessing import MinMaxScaler
+from sklearn.preprocessing import MinMaxScaler, StandardScaler
 
 class TestNormalizer(unittest.TestCase):
     normalizer = Normalizer()
@@ -35,7 +35,7 @@ class TestNormalizer(unittest.TestCase):
     # test_data = np.array([round(t, 2) for t in test_data])
     test_data = np.array(test_data)
     test_data = np.reshape(test_data, (-1,1))
-        
+
     def test_transform_featurescaler(self):
         result = self.normalizer.FeatureScaler.transform(self.test_data)
         scaler = MinMaxScaler()
@@ -55,4 +55,4 @@ class TestNormalizer(unittest.TestCase):
             self.normalizer.MeanScaler.transform(test_data)
             self.normalizer.ZScoreScaler.transform(test_data)
             self.normalizer.UnitLengthScaler.transform(test_data)
-
+    

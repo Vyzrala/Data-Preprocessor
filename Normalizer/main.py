@@ -31,8 +31,10 @@ def main():
     test = np.array(test)
     test = np.reshape(test, (-1, 1))
     normalizer = Normalizer()
-    normalized = normalizer.FeatureScaler.transform(test)
-    print(normalized)    
+    # normalized = normalizer.FeatureScaler.transform(test)
+    # print(normalized)    
+    for k, v in normalizer.scalers.items():
+        print(k, "\n", v.transform(test))
        
 
 

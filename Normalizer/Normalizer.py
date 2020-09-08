@@ -105,4 +105,5 @@ class Normalizer:
         self.MeanScaler = self.MeanScaler()
         self.ZScoreScaler = self.ZScoreScaler()
         self.UnitLengthScaler = self.UnitLengthScaler()
+        self.scalers = {'Featutre scaler': self.FeatureScaler, "Mean scaler": self.MeanScaler, "ZScore scaler": self.ZScoreScaler, "Unit length scaler": self.UnitLengthScaler}
 
