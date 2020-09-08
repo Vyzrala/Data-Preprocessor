@@ -101,7 +101,7 @@ class Normalizer:
 
     def __init__(self):
         self.FeatureScaler = self.FeatureScaler()
-        self.MinMaxScaler = self.FeatureScaler()
+        # self.MinMaxScaler = self.FeatureScaler()
         self.MeanScaler = self.MeanScaler()
         self.ZScoreScaler = self.ZScoreScaler()
         self.UnitLengthScaler = self.UnitLengthScaler()

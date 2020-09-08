@@ -29,10 +29,10 @@ def main():
             110.0625    , 113.90249634, 111.11250305, 112.72750092]
     
     test = np.array(test)
+    test = np.reshape(test, (-1, 1))
     normalizer = Normalizer()
     normalized = normalizer.FeatureScaler.transform(test)
-    
-    print(normalized)
+    print(normalized.all())
     
        
 

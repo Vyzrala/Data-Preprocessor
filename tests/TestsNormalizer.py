@@ -1,7 +1,12 @@
+import sys
+sys.path.append('../')
+from Normalizer.Normalizer import Normalizer
 import unittest
-import Normalizer.Normalizer as Normalizer
+import numpy as np
+from sklearn.preprocessing import MinMaxScaler
 
 class TestNormalizer(unittest.TestCase):
+    normalizer = Normalizer()
     test_data = [ 61.19499969,  57.31000137,  56.09249878,  61.72000122,
                 61.38000107,  64.61000061,  61.93500137,  63.70249939,
                 63.57249832,  60.22750092,  61.23249817,  60.35250092,
@@ -27,5 +32,26 @@ class TestNormalizer(unittest.TestCase):
                 92.61499786,  94.80999756,  93.25250244,  95.04000092,
                 96.19000244, 106.26000214, 108.9375    , 109.66500092,
                 110.0625    , 113.90249634, 111.11250305, 112.72750092]
+    # test_data = np.array([round(t, 2) for t in test_data])
+    test_data = np.reshape(test_data, (-1,1))
         
-        
+    def test_transform_featurescaler(self):
+        result = self.normalizer.FeatureScaler.transform(self.test_data)
+        scaler = MinMaxScaler()
+        scaler.fit(self.test_data)
+        correct = scaler.transform(self.test_data)
+        self.assertTrue(np.allclose(result, correct))
+    
+    def test_reverse_transform_featurescaler(self):
+        result = self.normalizer.FeatureScaler.transform(self.test_data)
+        result = self.normalizer.FeatureScaler.reverse_transform(result)
+        self.assertTrue(np.allclose(result, self.test_data))
+    
+    def test_raise_transform(self):
+        test_data = self.test_data.tolist()
+        with self.assertRaises(ValueError):
+            self.normalizer.FeatureScaler.transform(test_data)
+            self.normalizer.MeanScaler.transform(test_data)
+            self.normalizer.ZScoreScaler.transform(test_data)
+            self.normalizer.UnitLengthScaler.transform(test_data)
+
